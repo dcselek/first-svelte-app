@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte'
-import { Badge } from 'sveltestrap';
+    import { Badge, Button } from 'sveltestrap';
 
     let data = "";
 
@@ -9,7 +9,9 @@ import { Badge } from 'sveltestrap';
        data = await res.json();
     });
 
-    
+    function refresh(){
+        history.go(0);
+    }    
 </script>
 
 <svelte:head>
@@ -21,4 +23,5 @@ import { Badge } from 'sveltestrap';
         <h1><Badge color="danger">RANDOM CUTE CAT PHOTOS</Badge></h1>
     </div>
     <img style="width: 500px; height: 500px;" alt="" src = {data.file} />
+    <input type="button" style="margin-top: 16px;" on:click={refresh} value="Click & New🐱" />
 </div>
