@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte'
-    import { Badge, Button } from 'sveltestrap';
+    import { Badge } from 'sveltestrap';
+import Button from '../components/button.svelte';
 
     let data = "";
 
@@ -24,4 +25,5 @@
     </div>
     <img style="width: 500px; height: 500px;" alt="" src = {data.file} />
     <input type="button" style="margin-top: 16px;" on:click={refresh} value="Click & New🐱" />
+    <Button kind="meow" color="danger"></Button>
 </div>
